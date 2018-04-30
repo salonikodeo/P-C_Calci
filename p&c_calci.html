@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>P&C Calculator</title>
+  <link rel="stylesheet" type="text/css" href="p&c_script.js">
+  <script type="text/javascript">
+    var n = $("#submit").
+    var factorial = function(n){
+      var fact = 1;
+      if(n===0){
+        return fact;
+      }
+      else{
+        for(var i=n;i>0;i--){
+          fact = fact*i;
+        }
+        return fact;
+      }
+    }
+    var permutation = function(n,r){
+      return (factorial(n))/(factorial(n-r));
+    }
+    var combination = function(n,r){
+      return (factorial(n))/(factorial(r)*factorial(n-r));
+    }
+  </script>
+</head>
+<body>
+  <h1>Permutations and Combinations Calculator</h1>
+  <div>
+    <p>
+    It let you choose <i>r</i> elements from a set of <i>n</i> elements and calculate the number of permutations and/or combinations!
+    </p>
+  </div>
+  <div>
+    <a class="button" title="Calculate">Calculate</a>
+    <a class="button" title="Know more">Know more</a> 
+  </div>
+  <section>
+  <form action="">
+  <fieldset>
+    <legend>Permutations and Combinations:</legend>
+    <br>
+    <div>Enter total number of elements</div>
+    <input type="text" class="n" name="total elements">
+    <br>
+    <br>
+    <div>Enter sample space objects</div>
+    <input type="text" class="r" name="sample objects">
+    <input id = "submit" type="button" onclick = "permutation(n,r)" value="SUBMIT">
+    <input type="button" value="RESET">
+    <br>
+    <div><sup>n</sup>p<sub>r</sub>:</div>
+    <input type="text" name="permutation">
+    <br>
+    <div><sup>n</sup>c<sub>r</sub>:</div>
+    <input type="text" name="combination">
+  </fieldset>
+  </form>
+</section>
+<section>
+  <div>
+    <p>Know More</p>
+    <ul>
+      <li>Fundamental Principle of Counting</li>
+      <li>Permutation</li>
+      <li>Combination</li>
+      <li>Difference between Permutation and Combination</li>
+      <li>Sample Examples</li>
+    </ul>
+    <section>
+      <div>
+        <h2>Fundamental Principle of Counting</h2>
+        <p>It states that <i>“If an event can occur in m different ways, following which another event can occur in n different ways, then the total number of occurrence of the events in the given order is m×n.” </i><br>The above principle can be generalised for any finite number of events.</p>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h2>Permutations</h2>
+        <p>Definition : A permutation is an arrangement in a definite order of a number of objects taken some or all at a time.</p>
+        <section>
+          <legend>Permutation when all the objects are distinct</legend>
+          <p>Theorem 1  The number of permutations of n different objects taken r at a time, where 0 < r ≤ n  and the objects do not repeat  is n ( n – 1) ( n – 2). . .( n – r + 1), which is denoted by nPr.
+          </p>
+          <p>
+            Factorial notation  The notation n! represents the product of first n natural numbers, i.e., the product 1 × 2 × 3 × . . . × (n – 1) × n is denoted as n!. We read this symbol as ‘n factorial’. Thus, 1 × 2 × 3 × 4 . . .  × (n – 1) × n = n ! 1 = 1 ! 1 × 2 = 2 !1× 2 × 3 = 3 ! 1 × 2 × 3 × 4 = 4 ! and so on.
+            We define 0 ! = 1 Clearly, for a natural number n     n ! = n (n  –  1) ! = n (n  –  1) (n  –  2) ! [provided (n ≥ 2)] = n (n  –  1) (n  –  2)  (n  –  3) ! [provided (n ≥ 3)] and so on.
+          </p>
+          <p>Formula : 
+          </p>
+          <p>Theorem 2  The number of permutations of n different objects taken r at a time, where repetition is allowed, is nr. </p>
+        </section>
+        <section>
+          <legend>
+            Permutations when all the objects are not distinct objects
+          </legend>
+          <p>Theorem 3 The number of permutations of n objects, where p objects are of the
+          same kind and rest are all different = 
+          ! ! n p
+          .
+          In fact, we have a more general theorem.</p> 
+          <p>
+            Theorem 4 The number of permutations of n objects, where p1 objects are of one kind, p2 are of second kind, ..., pk are of kth kind and the rest, if any, are of different kind is n!/(p1!p2!...pk!)
+          </p>  
+        </section>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h2>Combinations</h2>
+        <p>
+          In mathematics, a combination is a selection of items from a collection, such that (unlike permutations) the order of selection does not matter. For example, given three fruits, say an apple, an orange and a pear, there are three combinations of two that can be drawn from this set: an apple and a pear; an apple and an orange; or a pear and an orange. More formally, a k-combination of a set S is a subset of k distinct elements of S.
+        </p>
+        <p>Formula:</p>
+        <p>
+          Combinations refer to the combination of n things taken k at a time without repetition. To refer to combinations in which repetition is allowed, the terms k-selection,[1] k-multiset,[2] or k-combination with repetition are often used.[3] If, in the above example, it were possible to have two of any one kind of fruit there would be 3 more 2-selections: one with two apples, one with two oranges, and one with two pears.
+        </p>
+      </div>
+    </section>
+  </div>
+</section>
+</body>
+</html>
